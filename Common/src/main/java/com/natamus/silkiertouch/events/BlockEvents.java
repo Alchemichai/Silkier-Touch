@@ -146,7 +146,6 @@ public class BlockEvents {
 			return true;
 		}
 
-		level.setBlock(blockPos, blockState, 3);
 		TaskFunctions.enqueueCollectiveServerTask(level.getServer(), () -> {
 			BlockEntity blockEntity = level.getBlockEntity(blockPos);
 			if (blockEntity instanceof SpawnerBlockEntity spawnerBlockEntity) {
@@ -158,6 +157,6 @@ public class BlockEvents {
 		}, 0);
 
 		handStack.shrink(1);
-		return false;
+		return true;
 	}
 }
